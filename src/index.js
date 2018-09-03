@@ -1,7 +1,7 @@
 const fs = require('fs');
 try {
   const buffer = fs.readFileSync('./tsconfig.json')
-  const tsConfig = JSON.parse(buffer.toString());
+  const tsConfig = JSON.parse(buffer);
   start(tsConfig);
 } catch (er) {
   console.log('error:', er)
@@ -14,8 +14,8 @@ function start(_tsConfig) {
 
   const lab = require('./lab.ts')
 
-  // const color = require('./color-functions/index.ts');
-  // console.log(color)
+  const color = require('./color-functions/index.ts');
+  console.log(color)
 }
 
 
