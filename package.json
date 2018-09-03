@@ -5,12 +5,17 @@
   "license": "MIT",
   "scripts": {
     "tsc": "tsc",
-    "start": "node index.js",
+    "start": "node src/index.js",
+    "dev": "nodemon -w src -e 'ts js' src/index.js",
+    "compile": "tsc -p './'",
+    "dev:c": "npm-run-parallel dev compile",
     "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",
     "jest": "^23.5.0",
+    "nodemon": "^1.18.4",
+    "npm-run-parallel": "^0.6.0",
     "ts-jest": "^23.1.4"
   },
   "dependencies": {
